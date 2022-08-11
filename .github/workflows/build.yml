@@ -32,6 +32,9 @@ jobs:
         run: |
           echo Install virglrenderer
           
+          sudo apt update
+          sudo apt upgrade
+          
           sudo apt install libvirglrenderer1 libvirglrenderer-dev
           
           echo Install Weston compositor
