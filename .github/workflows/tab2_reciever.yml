@@ -12,7 +12,4 @@ jobs:
         run: |
           echo Install build tools
           
-          pwd
-          ls -la
-          cd /home/tinhembedded/workspace/2022
-          ls -la
+          rvgpu-renderer -b 1280x720@0,0 -p 55667
