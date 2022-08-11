@@ -31,7 +31,7 @@ jobs:
       - name: Create Build Environment
         run: |
           echo Install build tools
-          #sudo apt install gcc g++ make cmake
+          sudo apt install gcc g++ make cmake
           #echo Install virglrenderer
           #sudo apt install libvirglrenderer1 libvirglrenderer-dev
           #echo Install Weston compositor
