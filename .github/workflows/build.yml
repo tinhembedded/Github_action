@@ -52,7 +52,7 @@ jobs:
           sudo ninja -C build/ install
           
           cd .. 
-         wget https://archive.mesa3d.org//mesa-18.2.0.tar.xz 
+          wget https://archive.mesa3d.org//mesa-18.2.0.tar.xz 
           tar -xf mesa-18.2.0.tar.xz 
           cd mesa-18.2.0/ 
 
