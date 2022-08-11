@@ -29,6 +29,8 @@ jobs:
           echo Install build tools
           
           sudo apt install gcc g++ make cmake
+          sudo apt install libpgm-5.2-0 libpgm-dev
+
           
       # Runs a single command using the runners shell
       - name: Build zero
@@ -39,6 +41,20 @@ jobs:
           ./configure --with-pgm 
           make 
           sudo make install
+          
+      # Runs a set of commands using the runners shell
+      - name: Create Build Environment 2
+        run: |
+          echo Install virglrenderer
+          
+          sudo apt install libvirglrenderer1 libvirglrenderer-dev
+          
+          echo Install Weston compositor
+          
+          sudo apt install libvirglrenderer1 libvirglrenderer-dev
+          sudo apt install libjpeg-dev libwebp-dev libsystemd-dev libpam-dev libva-dev freerdp2-dev \
+           libxcb-composite0-dev liblcms2-dev libcolord-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libpipewire-0.2-dev \
+           libxml2-dev meson
           
           
           
