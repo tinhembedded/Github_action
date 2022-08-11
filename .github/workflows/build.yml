@@ -13,5 +13,7 @@ jobs:
           echo Install build tools
           
           ls -la
+          cd /home/tinhembedded/workspace/
+          ls -la
           
           
