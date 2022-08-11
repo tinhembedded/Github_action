@@ -8,8 +8,6 @@ jobs:
   preparation:
     runs-on: ubuntu-20.04
     steps:
-
-      # Runs a set of commands using the runners shell
       - name: Create Build Environment
         run: |
           echo Install build tools
