@@ -23,37 +23,22 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
       # Runs a set of commands using the runners shell
       - name: Create Build Environment
         run: |
           echo Install build tools
           
           sudo apt install gcc g++ make cmake
-          echo Install virglrenderer
-          sudo apt install libvirglrenderer1 libvirglrenderer-dev
-          echo Install Weston compositor
-          sudo apt install libvirglrenderer1 libvirglrenderer-dev \
-                   libjpeg-dev libwebp-dev libsystemd-dev libpam-dev libva-dev freerdp2-dev \
-                   libxcb-composite0-dev liblcms2-dev libcolord-dev libgstreamer1.0-dev \
-                   libgstreamer-plugins-base1.0-dev libpipewire-0.2-dev libxml2-dev meson \
-                   libxkbcommon-x11-dev libpixman-1-dev libinput-dev libdrm-dev wayland-protocols \
-                   libcairo2-dev libpango1.0-dev libdbus-1-dev libgbm-dev libxcursor-dev
-          sudo apt-get update
-          sudo apt --fix-missing
-          echo Download source wayland weston lib
-          wget https://github.com/wayland-project/weston/archive/8.0.93.tar.gz
-          echo Exact file
-          tar -xf 8.0.93.tar.gz
-          ls -al
-          cd weston-8.0.93/
-          meson build/
-          sudo ninja -C build/ install
-          echo build weston
-          cd ..
+          
+      # Runs a single command using the runners shell
+      - name: Build zero
+        run: |
+          wget https://github.com/zeromq/libzmq/releases/download/v4.3.4/zeromq-4.3.4.tar.gz 
+          tar -xf zeromq-4.3.4.tar.gz 
+          cd ~/zeromq-4.3.4/ 
+          ./configure --with-pgm 
+          make 
+          sudo make install
           
           
           
