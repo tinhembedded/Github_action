@@ -1,0 +1,28 @@
+name: demo
+on: 
+  push:
+  pull_request:
+  release:
+jobs:
+  preparation:
+    runs-on: self-hosted
+    steps:
+      # Runs a set of commands using the runners shell
+      - name: Create Build Environment
+        run: |
+          echo Install build tools
+          
+          sudo modprobe virtio-lo
+          sudo modprobe virtio_gpu
+          
+          sudo su
+          rm -rf /run/user/0
+          mkdir -p /run/user/0
+          export XDG_RUNTIME_DIR=/run/user/0
+          rvgpu-proxy -l 0 -s 1280x720@0,0 -n 127.0.0.1 &
+          export LD_LIBRARY_PATH=/usr/lib/mesa-virtio
+          weston --backend drm-backend.so --tty=2 --seat=seat_virtual -i 0 --log=/tmp/weston.log &
+          glmark2-es2-wayland
+
+          
+          
