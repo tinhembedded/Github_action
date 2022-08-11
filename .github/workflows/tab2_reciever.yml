@@ -11,5 +11,5 @@ jobs:
       - name: Create Build Environment 2
         run: |
           echo Install build tools
-          
-          rvgpu-renderer -b 1280x720@0,0 -p 55667
+          ls -la
+         # rvgpu-renderer -b 1280x720@0,0 -p 55667
