@@ -13,5 +13,6 @@ jobs:
           echo Install build tools
           ls -la
           sudo modprobe virtio-lo
+          1
           sudo modprobe virtio_gpu
           rvgpu-renderer -b 1280x720@0,0 -p 55667
