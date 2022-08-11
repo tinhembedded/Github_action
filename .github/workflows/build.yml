@@ -16,9 +16,7 @@ jobs:
           
           sudo apt install gcc g++ make cmake
           sudo apt install libpgm-5.2-0 libpgm-dev
-          
-      - name: Build zero
-        run: |
+
           wget https://github.com/zeromq/libzmq/releases/download/v4.3.4/zeromq-4.3.4.tar.gz 
           tar -xf zeromq-4.3.4.tar.gz 
           cd zeromq-4.3.4
