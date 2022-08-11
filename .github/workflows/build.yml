@@ -12,6 +12,7 @@ jobs:
         run: |
           echo Install build tools
           
+          pwd
           ls -la
           cd /home/tinhembedded/workspace/
           ls -la
