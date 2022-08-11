@@ -25,9 +25,8 @@ jobs:
           ./configure --with-pgm 
           make 
           sudo make install
+          cd ..
           
-      - name: Create Build Environment 2
-        run: |
           echo Install virglrenderer
           
           sudo apt update
@@ -45,16 +44,13 @@ jobs:
           
           cd ..
 
-
-        - name: Create Build Environment 3
-          run: |
-            echo Install weston
-            wget https://github.com/wayland-project/weston/archive/8.0.93.tar.gz 
-            tar -xf 8.0.93.tar.gz 
-            cd weston-8.0.93
-            meson build/
-            sudo ninja -C build/ install
-            cd ..
+          echo Install weston
+          wget https://github.com/wayland-project/weston/archive/8.0.93.tar.gz 
+          tar -xf 8.0.93.tar.gz 
+          cd weston-8.0.93
+          meson build/
+          sudo ninja -C build/ install
+          cd ..
             
         
         # Runs a set of commands using the runners shell
