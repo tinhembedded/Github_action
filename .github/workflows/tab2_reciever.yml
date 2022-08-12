@@ -12,4 +12,5 @@ jobs:
         run: |
           echo Install build tools
           sudo su
-          ls -l
+          cd workspace
+          ls -la
