@@ -12,5 +12,6 @@ jobs:
         run: |
           echo Install build tools
           lsmod | grep virtio
+          ls -la
           rvgpu-renderer -b 1280x720@0,0 -p 55667
           
