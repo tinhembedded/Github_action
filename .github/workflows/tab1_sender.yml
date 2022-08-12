@@ -12,8 +12,6 @@ jobs:
         - name: Create Build Environment 2
           run: |
             echo Install build tools
-            sudo modprobe virtio-lo
-            sudo modprobe virtio_gpu
             ls -la
         
   sender:    
