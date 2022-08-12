@@ -11,5 +11,5 @@ jobs:
       - name: Create Build Environment 2
         run: |
           echo Install build tools
-          ls -la
-          sudo apt update
+          sudo su
+          ls -l
