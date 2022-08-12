@@ -12,9 +12,8 @@ jobs:
         run: |
           echo Sender run
           
-          sudo su
-          rm -rf /run/user/0
-          mkdir -p /run/user/0
+          sudo rm -rf /run/user/0
+          sudo mkdir -p /run/user/0
           #export XDG_RUNTIME_DIR=/run/user/0
           #rvgpu-proxy -l 0 -s 1280x720@0,0 -n 127.0.0.1 &
           #export LD_LIBRARY_PATH=/usr/lib/mesa-virtio
